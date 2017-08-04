@@ -1,0 +1,2 @@
+@import "base-styles/weui.wxss";
+@import "base-styles/base.wxss";

@@ -1,0 +1,23 @@
+<import src="../templ/cardList.wxml"/>
+<import src="../templ/cardLists.wxml"/>
+
+<view class="container">
+    <scroll-view>
+        <!-- 海报 -->
+        <view class="poster">
+            <image src="{{poster.image}}" mode="widthFix"></image>
+        </view>
+
+        <!-- 列表卡 -->
+        <template is="cardLists"
+            wx:for="{{cardLists}}" wx:key=""
+            data="{{...item}}"></template>
+
+        <!-- 底部 -->
+        <view class="buyhistory">
+            <image class="buyhistory-icon" src="{{icon.buyhistory}}"></image>
+            <text class="buyhistory-text">购买历史</text>
+            <view class="line"></view>
+        </view>
+    </scroll-view>
+</view>

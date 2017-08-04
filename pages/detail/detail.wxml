@@ -1,0 +1,47 @@
+<import src="../templ/shop.wxml"/>
+
+<scroll-view>
+    <view class="cart-box">
+        <image class="money" src="{{icon.money}}"></image>
+        <text class="gift-text">选择礼品</text>
+        <view wx:for="{{shops}}" class="{{item.num>0?'green':'gifts-box'}}">
+            <navigator class="gifts-content" url="../giftcard/giftcard">
+                <view class="gifts-title-box">
+                    <text class="gifts-title">{{item.title}}</text>
+                </view>
+                <view class="gifts-price-box">
+                    <text class="gifts-price">{{item.price}}元</text>
+                </view>
+            </navigator>
+            <view class="numCount numCount_active" wx:if="{{item.num>0}}" wx:key="selected">
+                <view class="numMin-box" bindtap="minusCount" data-index="{{index}}">
+                    <text class="numMin">-</text>
+                </view>
+                <view class="num-box">
+                    <text class="num">{{item.num}}</text>
+                </view>
+                <view class="numAdd-box" bindtap="addCount" data-index="{{index}}">
+                    <text class="numAdd">+</text>
+                </view>
+            </view>
+            <view class="numCount" wx:if="{{item.num==0}}">
+                <view class="numAdd-box-0" bindtap="addCount" data-index="{{index}}">
+                    <text class="numAdd-0">+</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</scroll-view>
+<view class="shopping">
+  <view class="shopping-car" wx:if="{{totalNum>0}}">
+    <view class="shopping-car-num">
+      <text class="shopping-car-num-text">共{{totalNum}}份</text>
+    </view>
+    <view class="shopping-car-price">
+      <text class="shopping-car-price-text">{{totalPrice}}</text>
+    </view>
+  </view>
+  <view class="buy-and-give">
+    <text>购买并赠送</text>
+  </view>
+</view>

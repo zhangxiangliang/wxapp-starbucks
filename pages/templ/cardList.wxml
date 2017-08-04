@@ -1,0 +1,10 @@
+<template name="cardList">
+    <view class="photo-flex" wx:for="{{lists}}" wx:key="" wx:for-item="items">
+        <view class="photo-box" wx:for="{{items}}" wx:key=""
+            data-url="{{item.href}}"
+            bindtap="clickNavigateTo">
+            <image src="{{item.image}}" class="index-photo"></image>
+            <text class="content-text">{{item.text}}</text>
+        </view>
+    </view>
+</template>

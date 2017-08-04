@@ -1,0 +1,8 @@
+<import src="../templ/cardList.wxml"/>
+
+<template name="cardLists">
+    <view class="content__friend">
+        <text class="index-text">{{text}}</text>
+        <template is="cardList" data="{{lists:lists}}"></template>
+    </view>
+</template>
